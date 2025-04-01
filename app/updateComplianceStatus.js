@@ -8,14 +8,6 @@ export default function UpdateComplianceStatus() {
 
   const updateComplianceStatus = async () => {
     try {
-      // Convert agreementId to a number (assuming it's a numeric input)
-      const agreementIdNumber = parseInt(agreementId, 10);
-
-      if (isNaN(agreementIdNumber)) {
-        console.error("Invalid Agreement ID. Please enter a valid number.");
-        return;
-      }
-
       const provider = new ethers.BrowserProvider(window.ethereum);
       const signer = await provider.getSigner();
       const contract = new ethers.Contract(
